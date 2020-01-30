@@ -20,3 +20,5 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+API url [https://my-json-server.typicode.com/irbis999/media-site](https://my-json-server.typicode.com/irbis999/media-site)
