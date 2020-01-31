@@ -1,55 +1,38 @@
-<template>
-  <div>
-    <nuxt />
-  </div>
+<template lang="pug">
+  .container
+    topline
+    nuxt.page
+    page-footer
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+<script>
+import { mapState } from 'vuex'
+import PageFooter from '~/components/page-footer'
+import Topline from '~/components/topline'
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+export default {
+  components: { PageFooter, Topline },
+  head () {
+    return {
+      title: this.platform.title,
+      htmlAttrs: {
+        class: !this.$device.isMobile ? '__desktop' : '',
+      },
+      style: [
+        { cssText: `:root { --active-color: ${this.platform.active_color}; }`, type: 'text/css' },
+      ],
+      link: [
+        { rel: 'icon', href: this.platform.favicon },
+      ],
+    }
+  },
+  computed: {
+    ...mapState(['platform']),
+  },
 }
+</script>
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
+<style lang="sass" scoped>
+.page
+  padding: 15px
 </style>

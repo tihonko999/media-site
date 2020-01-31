@@ -1,7 +1,20 @@
 {
-  "events": [
-    1,
-    2,
-    3
+  "platform": {
+    "id": 1,
+    "active_color": "#ff7623",
+    "title": "Mkset",
+    "favicon": "https://mkset.ru/favicon.ico"
+  },
+  "matters": [
+    {
+      "id": 1,
+      "title": "Свершилось несовершимое",
+      "content": "Lorem ipsum"
+    },
+    {
+      "id": 2,
+      "title": "Россия встала с колен",
+      "content": "Ну наконец-то!"
+    }
   ]
 }
