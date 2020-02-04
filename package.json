@@ -13,8 +13,11 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@nuxtjs/amp": "^0.2.2",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/device": "^1.2.5",
+    "@nuxtjs/sitemap": "^2.0.1",
+    "@nuxtjs/style-resources": "^1.0.0",
     "node-sass": "^4.13.1",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.0.0",

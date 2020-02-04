@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export default {
   mode: 'universal',
   /*
@@ -40,7 +42,22 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/device',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/amp',
+    '@nuxtjs/sitemap',
   ],
+  amp: {
+    // Options
+  },
+  styleResources: {
+    sass: '~assets/_globals.sass',
+  },
+  sitemap: {
+    routes: async () => {
+      const { data } = await axios.get('https://my-json-server.typicode.com/irbis999/media-site/matters')
+      return data.map(item => `/news/${item.id}`)
+    },
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

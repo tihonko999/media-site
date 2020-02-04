@@ -7,7 +7,7 @@
 <style lang="sass" scoped>
 .topline
   padding: 15px
-  border-bottom: 1px solid #ccc
+  border-bottom: 1px solid $grey
 a
   margin-right: 10px
   &.nuxt-link-exact-active
